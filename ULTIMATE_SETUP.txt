@@ -1,0 +1,30 @@
+THE SYSTEM ULTIMATE 5.0 — UPDATE GUIDE
+
+WHAT IS INCLUDED
+- Existing V4 RPG features retained: status, XP/ranks, charts, dungeons, skills, inventory, achievements, alerts, backup/import and PWA install.
+- Optional fitness milestone quests: 100 push-ups, 100 squats, 100 sit-ups and 5 km running. These are weekly/long-term targets, not mandatory daily tasks. Scale them to your ability, use breaks, and stop if uncomfortable.
+- Create, edit and delete custom quests; set XP, category, difficulty, deadline and optional date.
+- Animated CSS 3D-style hunter avatar with selectable profile styles. This is a lightweight visual effect, not a full 3D game model.
+- Private guild screen with invite-code display, pending requests, approve/reject controls and member leaderboard preview.
+
+IMPORTANT: ONLINE GUILD STATUS
+The included guild is a LOCAL PREVIEW. Requests and approvals are stored only in this browser and do not sync to other phones. A true online friends leaderboard needs a backend, sign-in and database. This ZIP does not contain a Firebase project configuration or deployed backend.
+
+RECOMMENDED ONLINE BACKEND (NEXT STEP)
+1. Create a Firebase project.
+2. Enable Firebase Authentication (email/password or Google sign-in).
+3. Create a Cloud Firestore database.
+4. Add a guilds collection; store ownerUid, inviteCode, members and joinRequests.
+5. Enforce Firestore Security Rules so only the guild owner can approve/reject requests and only approved members can read the leaderboard. Never put service-account credentials in frontend files.
+6. Add your Firebase web app config to a separate firebase-config.js and connect authenticated reads/writes.
+7. Deploy the Firestore rules before inviting friends.
+
+GITHUB PAGES UPDATE
+- Extract this ZIP.
+- Upload the CONTENTS of THE_SYSTEM_V3 to the ROOT of your GitHub repository (not the outer folder).
+- Replace index.html, manifest.webmanifest and sw.js; upload the icons folder.
+- Keep the repo root structure: index.html, manifest.webmanifest, sw.js, icons/icon-192.png, icons/icon-512.png.
+- Wait for Pages deployment, then refresh the site. If installed as a PWA, remove the old shortcut and install again after the new version loads.
+
+DATA NOTE
+Ultimate 5.0 uses a new local save key to protect your old V4 save. Export your V4 backup before switching. This package does not automatically migrate V4 data.
